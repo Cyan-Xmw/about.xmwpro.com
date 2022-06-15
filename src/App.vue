@@ -9,11 +9,16 @@ const state = reactive<any>({
 
 <template>
   <el-config-provider :locale="state.locale">
-    <div
-      class="container"
-      style="width: 1200px; margin: 0 auto; padding-top: 20px"
-    >
-      <XmwAbout />
-    </div>
+    <XmwAbout />
   </el-config-provider>
 </template>
+<style>
+@import "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@1&display=swap";
+@import "https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap";
+body {
+  font-family: jetbrains mono, zcool kuaile, cursive, sans-serif;
+}
+#fp-nav ul li a span {
+  background: #425aef !important;
+}
+</style>

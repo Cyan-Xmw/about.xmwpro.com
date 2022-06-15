@@ -1,0 +1,10 @@
+html {
+    --cyan-bg-color: #fff;
+    --cyan-text-color: #4c4948;
+}
+
+html.dark {
+    /* 自定义深色背景颜色 */
+    --cyan-bg-color: rgba(35, 35, 35, 0.5);
+    --cyan-text-color: #fff;
+}
