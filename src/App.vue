@@ -18,7 +18,7 @@ const state = reactive<any>({
 body {
   font-family: jetbrains mono, zcool kuaile, cursive, sans-serif;
 }
-#fp-nav ul li a span {
-  background: #425aef !important;
+#fp-nav a span {
+  background: rgba(154, 205, 50, 0.65) !important;
 }
 </style>

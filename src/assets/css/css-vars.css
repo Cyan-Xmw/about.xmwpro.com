@@ -1,10 +1,16 @@
 html {
     --cyan-bg-color: #fff;
+    --cyan-font-color: #000;
     --cyan-text-color: #4c4948;
+    --cyan-text-active-color: #fff;
+    --cyan-card-color: rgba(255,255,255,.45);
 }
 
 html.dark {
     /* 自定义深色背景颜色 */
     --cyan-bg-color: rgba(35, 35, 35, 0.5);
+    --cyan-font-color: #fff;
     --cyan-text-color: #fff;
+    --cyan-text-active-color: #4c4948;
+    --cyan-card-color: rgba(0,0,0,.45);
 }

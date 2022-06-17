@@ -11,7 +11,8 @@ import VueFullPage from 'vue-fullpage.js'
 // 个人信息
 import myinfo from "./myInfo"
 import 'animate.css'
-
+// boxicons图标库
+import 'boxicons/css/boxicons.min.css';
 
 const app = createApp(App)
 app.config.globalProperties.myinfo = myinfo
