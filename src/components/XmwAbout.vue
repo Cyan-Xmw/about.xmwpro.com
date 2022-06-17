@@ -16,7 +16,7 @@
       >
         <div class="section1-wrap">
           <div class="page1-wrap">
-            <div class="page1-wrap-title">您好呀，来到这里的伙伴！</div>
+            <div class="page1-wrap-title">您好呀，朋友！</div>
             <div class="content">
               <p>
                 我叫<span style="color: yellowgreen; font-size: 2.8rem">{{
