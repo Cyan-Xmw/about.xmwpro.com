@@ -3,6 +3,7 @@ export default {
         title: "欢迎来到我的网站",  // 浏览器标签页名 和 footer中的版权内容
         name: "谢明伟",   // 你的名字
         nickName: "Cyan",   // 英文名或昵称
+        github_name: 'Cyan-Xmw'
     },
     isMobile: function () {
         let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
@@ -80,9 +81,15 @@ export default {
             icon: 'cyan-weixin'
         },
         {
-            name: 'QQ',
-            link: 'http://wpa.qq.com/msgrd?v=3&uin=843348394&site=qq&menu=yes',
-            icon: 'cyan-QQ'
+            name: '留言',
+            link: 'https://blog.xmwpro.com/guestbook/',
+            icon: 'cyan-shuxie'
         }
+    ],
+    personal_works: [
+        'vue3-xmw-admin-pro',
+        'vue-xmw-admin-pro',
+        'vue3-element-table',
+        'vue3-element-form'
     ]
 }

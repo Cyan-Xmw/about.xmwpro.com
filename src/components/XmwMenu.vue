@@ -18,7 +18,12 @@
     </nav>
     <!-- 切换黑暗模式 -->
     <div class="toggle_day_night">
-      <el-switch v-model="isDark" :active-icon="Moon" :inactive-icon="Sunny">
+      <el-switch
+        v-model="isDark"
+        :active-icon="Moon"
+        :inactive-icon="Sunny"
+        @change="changeTheme"
+      >
       </el-switch>
     </div>
     <!-- 移动端菜单 -->
@@ -63,12 +68,17 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
 import { Sunny, Moon, MoreFilled } from "@element-plus/icons-vue";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 const show_menu = ref(false);
+const emits = defineEmits(["changeTheme"]);
+
+const changeTheme = (val: boolean) => {
+  emits("changeTheme", val);
+};
 </script>
 
 <style scoped lang="less">

@@ -3,7 +3,7 @@
     <div id="container-wrap"></div>
     <el-header
       ><!-- 侧边栏菜单 -->
-      <Menu ref="menuRef"
+      <Menu ref="menuRef" @changeTheme="changeTheme"
     /></el-header>
     <!-- 全屏组件 -->
     <full-page ref="fullpageRef" :options="options" id="fullpage">
@@ -82,6 +82,27 @@
       >
         <div class="page3-wrap page-wrap">
           <p class="page-wrap-title">个人作品</p>
+          <div class="personal-works">
+            <div
+              class="personal-works-item"
+              v-for="(repo, index) in myinfo.personal_works"
+              :key="index"
+            >
+              <a
+                :href="`https://github.com/${myinfo.global.github_name}/${repo}`"
+                target="_blank"
+              >
+                <img
+                  :src="`https://github-readme-stats.vercel.app/api/pin/?username=${
+                    myinfo.global.github_name
+                  }&repo=${repo}&theme=${
+                    isDark ? 'algolia' : null
+                  }&show_owner=true`"
+                  :alt="repo"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- 联系我 -->
@@ -126,6 +147,7 @@ import $ from "jquery";
 import Menu from "./XmwMenu.vue";
 const fullpageRef = ref<HTMLElement | null>(null);
 const menuRef = ref<HTMLElement | null>(null);
+const isDark = ref(localStorage.getItem("vueuse-color-scheme") === "dark");
 const options = {
   // licenseKey: "YOUR_KEY_HEERE",
   menu: isMobile() ? "#mobile-menu" : "#menu",
@@ -294,6 +316,11 @@ function initCircleMagic() {
   });
 }
 
+// 切换黑暗模式
+function changeTheme(val: boolean) {
+  isDark.value = val;
+}
+
 onMounted(() => {
   initCircleMagic();
 });
@@ -407,6 +434,21 @@ a {
   }
 }
 .page3-wrap {
+  .personal-works {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    &-item {
+      flex: 0 0 40%;
+      img {
+        width: 100%;
+        margin-top: 5px;
+      }
+    }
+  }
 }
 .page4-wrap {
   .social {
@@ -479,6 +521,9 @@ a {
     li {
       flex: 0 0 100%;
     }
+  }
+  .personal-works-item {
+    flex: 0 0 100% !important;
   }
   .page4-wrap .social-item {
     flex: 0 0 42%;
